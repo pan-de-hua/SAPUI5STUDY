@@ -1,0 +1,41 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	controllerName="Test.sapui5firstApp.controller.View1" displayBlock="true">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Table items="{/ZTEST1Set}" id="ztest1table">
+						<items>
+							<ColumnListItem type="Navigation" press="onItemPress">
+								<cells>
+									<Text text="{MATNR}" id="MATNR"/>
+									<Text text="{MAKTX}" id="MAKTX"/></cells>
+							</ColumnListItem>
+						</items>
+						<columns>
+							<Column id="__matnrColumn">
+								<header>
+									<Label text="物料号" id="__label5"/>
+								</header>
+							</Column>
+							<Column id="__maktxColumn">
+								<header>
+									<Label text="物料描述" id="__label6"/>
+								</header>
+							</Column>
+						</columns>
+					</Table>
+				</content>
+				<footer>
+                    <Bar>
+                        <contentRight>
+                            <Button icon="sap-icon://create" text="Create" press="onCreate"/>
+                            <Button icon="sap-icon://edit" text="Edit" press="onEdit"/>
+                            <Button icon="sap-icon://delete" text="Delete" press="onDelete"/>
+                        </contentRight>
+                    </Bar>
+                </footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
