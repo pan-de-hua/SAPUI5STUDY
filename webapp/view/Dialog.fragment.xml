@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    
+    <Dialog id="Dialog" title="Data CRUD">
+        <f:SimpleForm>
+            <Label text="物料号"/>
+            <Input id="Dialog.MATNR" value="{MATNR}"/>
+            <Label text="物料描述"/>
+            <Input id="Dialog.MAKTX" value="{MAKTX}"/>
+        </f:SimpleForm>
+        <Toolbar>
+            <ToolbarSpacer/>
+            <Button id="SaveCreate" text="保 存"/>
+            <Button id="SaveEdit" text="保存"/>
+            <Button id="CancelButton" text="取消" />
+        </Toolbar>
+    </Dialog>
+    
+</core:FragmentDefinition>

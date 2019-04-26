@@ -1,0 +1,14 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	controllerName="Test.sapui5firstApp.controller.Detail" displayBlock="true">
+<Page title="物料明细" showNavButton="true" navButtonPress="onNavPress">
+        <content>
+            <ObjectHeader title="{MAKTX}" 
+                number="MATNR: {MATNR}">
+                <attributes>
+                    <ObjectAttribute text="MATNR, MAKTX" />
+                </attributes>
+            
+            </ObjectHeader>
+        </content>
+    </Page>
+</mvc:View>

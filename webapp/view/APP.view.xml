@@ -1,0 +1,11 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="Test.sapui5firstApp.controller.APP">
+	<App id="app">
+		<pages>
+			<Page title="UI5 学习">
+				<content>
+				    <Button text="Table CRUD" width="200px" id="__button0" press="onpress1"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
