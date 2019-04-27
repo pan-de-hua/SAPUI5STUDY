@@ -5,6 +5,13 @@
 			<Page title="{i18n>title}" showNavButton="true" navButtonPress="onNavPress">
 				<content>
 					<Table items="{/ZTEST1Set}" id="ztest1table">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{i18n>invoiceListTitle}"/>
+								<ToolbarSpacer/>
+								<SearchField width="50%" search=".onFilterMatnrs"/>
+							</Toolbar>
+						</headerToolbar>
 						<items>
 							<ColumnListItem type="Navigation" press="onItemPress">
 								<cells>
@@ -27,14 +34,14 @@
 					</Table>
 				</content>
 				<footer>
-                    <Bar>
-                        <contentRight>
-                            <Button icon="sap-icon://create" text="Create" press="onCreate"/>
-                            <Button icon="sap-icon://edit" text="Edit" press="onEdit"/>
-                            <Button icon="sap-icon://delete" text="Delete" press="onDelete"/>
-                        </contentRight>
-                    </Bar>
-                </footer>
+					<Bar>
+						<contentRight>
+							<Button icon="sap-icon://create" text="Create" press="onCreate"/>
+							<Button icon="sap-icon://edit" text="Edit" press="onEdit"/>
+							<Button icon="sap-icon://delete" text="Delete" press="onDelete"/>
+						</contentRight>
+					</Bar>
+				</footer>
 			</Page>
 		</pages>
 	</App>

@@ -1,13 +1,17 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-        "sap/ui/core/UIComponent",
-       "sap/ui/core/routing/History"
-], function(Controller,UIComponent,History) {
+	"sap/ui/core/UIComponent",
+	"sap/ui/core/routing/History",
+	"../model/formatter",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
+], function(Controller, UIComponent, History, formatter, Filter, FilterOperator) {
 	"use strict";
 	var oModel;
 	var sCurrentPath; // current path
 	var sCurrentRow; // cureent row
 	return Controller.extend("Test.sapui5firstApp.controller.View1", {
+		formatter: formatter,
 		// btn_press: function() {
 		// 	oModel.read("/ZPM_CODEGROUP(codegruppe='1000',sprache='VI')", {
 		// 		success: function(oData, oResponse) {
@@ -158,29 +162,41 @@ sap.ui.define([
 			var oContext = evt.getSource().getBindingContext();
 			sCurrentPath = oContext.getPath();
 			sCurrentRow = oContext.getProperty("MATNR");
-			
-			 var oRouter = UIComponent.getRouterFor(this);
-	    		 var oItem = evt.getSource();
-	    		 var sPath = oItem.getBindingContext().getPath();
-	    		 oRouter.navTo("detail", {
-	    			 MATNR: encodeURIComponent(sPath)
-	    		});
+
+			var oRouter = UIComponent.getRouterFor(this);
+			var oItem = evt.getSource();
+			var sPath = oItem.getBindingContext().getPath();
+			oRouter.navTo("detail", {
+				MATNR: encodeURIComponent(sPath)
+			});
 		},
 		onInit: function() {
 			oModel = this.getOwnerComponent().getModel("Ztest1");
 			oModel.setUseBatch(false);
 			this.getView().setModel(oModel);
 		},
-			onNavPress: function(oEvent){
-                var oHistory = History.getInstance();
-				var sPreviousHash = oHistory.getPreviousHash();
-				
-				if (sPreviousHash != undefined){
-					window.history.go(-1);
-				}else{
-					var oRouter = UIComponent.getRouterFor(this);
-					oRouter.navTo("mainapp",{}, true);
-				}
-            }
+		onNavPress: function(oEvent) {
+			var oHistory = History.getInstance();
+			var sPreviousHash = oHistory.getPreviousHash();
+
+			if (sPreviousHash != undefined) {
+				window.history.go(-1);
+			} else {
+				var oRouter = UIComponent.getRouterFor(this);
+				oRouter.navTo("mainapp", {}, true);
+			}
+		},
+		onFilterMatnrs: function(oEvent) {
+			// build filter array
+			var aFilter = [];
+			var sQuery = oEvent.getParameter("query");
+			if (sQuery) {
+				aFilter.push(new Filter("MAKTX", FilterOperator.Contains, sQuery));
+			}
+			// filter binding
+			var oTable = this.byId("ztest1table");
+			var oBinding = oTable.getBinding("items");
+			oBinding.filter(aFilter);
+		}
 	});
 });

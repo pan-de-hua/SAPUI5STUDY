@@ -1,12 +1,18 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="Test.sapui5firstApp.controller.APP">
-	<App id="app">
-		<pages>
-			<Page title="UI5 学习">
-				<content>
-				    <Button text="Table CRUD" width="200px" id="__button0" press="onpress1"/>
-				    <Button text="ComboBox Use" width="200px" id="btn_ComboBoxUse" press="onpress2"/>
-				</content>
-			</Page>
-		</pages>
-	</App>
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="Test.sapui5firstApp.controller.APP" displayBlock="true">
+	<Shell>
+		<App id="app">
+			<pages>
+				<Page title="UI5 学习">
+					<content>
+						<Panel headerText="{i18n>helloPanelTitle}" class="sapUiResponsiveMargin" width="auto">
+							<content>
+								<Button text="Table CRUD" width="200px" id="__button0" press="onpress1" class="sapUiSmallMarginEnd"/>
+								<Button text="ComboBox Use" width="200px" id="btn_ComboBoxUse" press="onpress2" class="sapUiSmallMarginEnd" /></content>
+						</Panel>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
 </mvc:View>
