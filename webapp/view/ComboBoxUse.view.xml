@@ -1,0 +1,19 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Test.sapui5firstApp.controller.ComboBoxUse"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<app>
+		<pages>
+			<Page title="ComboBox TEST" showNavButton="true" navButtonPress="onNavPress">
+				<content>
+					<ComboBox
+						id="combobox1"
+						showSecondaryValues= "true"
+						 items="{ path: '/ZTEST1Set',
+								  sorter: { path: 'MATNR' },
+								  suspended: true}" 
+						  loadItems="handleLoadItems">
+						<core:ListItem key="{MATNR}" text="{MAKTX}" additionalText = "{MATNR}"/>
+					</ComboBox>
+				</content>
+			</Page>
+		</pages></app>
+</mvc:View>

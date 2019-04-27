@@ -107,6 +107,10 @@
 				"pattern": "view1",
 				"name": "master",
 				"target": "master"
+			},{
+				"pattern": "comboboxuse",
+				"name": "comboboxuse",
+				"target": "comboboxuse"
 			},
 			{
 				"pattern": "detail/{MATNR}",
@@ -120,6 +124,10 @@
 				},
 				"master": {
 					"viewName": "View1",
+					"viewLevel": 2
+				},
+				"comboboxuse": {
+					"viewName": "ComboBoxUse",
 					"viewLevel": 2
 				},
 				"detail": {

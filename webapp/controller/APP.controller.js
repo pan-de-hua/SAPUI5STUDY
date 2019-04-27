@@ -16,6 +16,10 @@ sap.ui.define([
 		onpress1: function() {
 				var oRouter = UIComponent.getRouterFor(this);
 				oRouter.navTo("master");
+			},
+		onpress2  : function() {
+				var oRouter = UIComponent.getRouterFor(this);
+				oRouter.navTo("comboboxuse");
 			}
 			/**
 			 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

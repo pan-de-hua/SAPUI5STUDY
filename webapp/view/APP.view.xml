@@ -4,6 +4,7 @@
 			<Page title="UI5 学习">
 				<content>
 				    <Button text="Table CRUD" width="200px" id="__button0" press="onpress1"/>
+				    <Button text="ComboBox Use" width="200px" id="btn_ComboBoxUse" press="onpress2"/>
 				</content>
 			</Page>
 		</pages>

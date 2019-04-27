@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-        "sap/ui/core/UIComponent"
-], function(Controller,UIComponent) {
+        "sap/ui/core/UIComponent",
+       "sap/ui/core/routing/History"
+], function(Controller,UIComponent,History) {
 	"use strict";
 	var oModel;
 	var sCurrentPath; // current path
@@ -169,6 +170,17 @@ sap.ui.define([
 			oModel = this.getOwnerComponent().getModel("Ztest1");
 			oModel.setUseBatch(false);
 			this.getView().setModel(oModel);
-		}
+		},
+			onNavPress: function(oEvent){
+                var oHistory = History.getInstance();
+				var sPreviousHash = oHistory.getPreviousHash();
+				
+				if (sPreviousHash != undefined){
+					window.history.go(-1);
+				}else{
+					var oRouter = UIComponent.getRouterFor(this);
+					oRouter.navTo("mainapp",{}, true);
+				}
+            }
 	});
 });
